@@ -12,3 +12,9 @@ That's it, the first push to remote is done
 
 <git ls-files> - To show all tracked files
 
+<git diff> - Shows diff b/w files in working dir vs staged
+
+<git log> - To get history of commits
+<git log -p> - Shows changes in each commit
+
+
