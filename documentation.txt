@@ -1,0 +1,14 @@
+Created file main.txt
+Added content to main.txt
+Ran <git init> on git_playground
+<git add main.txt>
+<git commit>
+Created a new repo on github and copied URL
+<git remote add origin <URL from github>>
+<git push -u origin main>
+That's it, the first push to remote is done
+
+<git remote -v> - To check if local repo is linked to remote
+
+<git ls-files> - To show all tracked files
+
