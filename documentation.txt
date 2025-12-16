@@ -13,6 +13,7 @@ That's it, the first push to remote is done
 <git ls-files> - To show all tracked files
 
 <git diff> - Shows diff b/w files in working dir vs staged
+<git diff file1 file2>, <git diff commit1 commit2> 
 
 <git log> - To get history of commits
 <git log -p> - Shows changes in each commit
@@ -20,6 +21,8 @@ That's it, the first push to remote is done
 <git branch <branch_name>> - To create a branch
 <git checkout <branch_name>> - To checkout to a branch
 <git checkout -b <branch_name>> - To perform both at once
+<git checkout -b <branch_name> <commitID>> - To create branch from particular commit
+<git checkout -b <branch_name> HEAD~5> - To create branch from 5th commit to HEAD
 
 <git push --set-upstream origin <branch_name>> - To push new branch to remote
 
@@ -42,3 +45,35 @@ Let's say a commit on remote has changes to main.txt. After <git fetch>, we stil
 
 <git pull> - Copies all files from remote to local repo
 
+<git rebase> - Merge preserves branch topolgy, while rebase rewrites history by replaying commits as if they were created on top of another branch.
+It is always a local operation.
+To rebase dummy2 branch onto main, perform following commands.
+<git checkout dummy2>
+<git rebase main> - This finally takes the commits unique to dummy2 and places them on top of commits from main. This happens on dummy2 branch. The commits of dummy2 get new hashes and they are not same hash as previous dummy2 commits, before rebasing.
+
+<git log --oneline --graph --all> - Best command to view branching in graph form on the terminal
+
+<git stash> - Used to stash the changes in a dirty working directory. Needed when we want to record the current state of working dir and the index, but want to go back to a clean working dir, thus making working dir to match the HEAD. The local changes are saved and can be applied, if needed, by
+<git stash apply>
+
+<git stash list> - To get stash contents
+<git stash drop> - To remove latest stashed changes
+<git stash branch <new_branch_name>> - To create a branch with the files put in stash
+
+<git clean -f> - Delete untracked files
+<git clean -fd> - Delete untracked files & directories
+
+<git tag <tag_name>> - To create a tag
+<git tag -a <tag_name> -m <message>> - Self explanatory
+<git tag -a <tag_name> <commit_ID>> - To create tag on particular commit
+<git tag -a <tag_name> -f <commit_ID>> - To move existing tag to another commit
+<git push origin main <tag_name>> - To push the tag to remote
+<git tag -l> - To list all tags
+<git tag --list "*v1."> - To list all tags related to v1.* 
+
+<git remote rename origin <new_repo_name>> - To rename remote repo
+
+<git branch -m <old_branch> <new_branch>> - To rename a branch
+<git push origin :<old_branch> <new_branch>> - Push new branch name to remote to sync
+
+ 
