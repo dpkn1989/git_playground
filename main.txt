@@ -1,3 +1,5 @@
 This is the first line added to this file
 
 Adding 2nd line to check git diff usage
+
+Adding 3rd line to check git rebase usage
