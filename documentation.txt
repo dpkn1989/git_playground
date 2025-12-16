@@ -17,4 +17,28 @@ That's it, the first push to remote is done
 <git log> - To get history of commits
 <git log -p> - Shows changes in each commit
 
+<git branch <branch_name>> - To create a branch
+<git checkout <branch_name>> - To checkout to a branch
+<git checkout -b <branch_name>> - To perform both at once
+
+<git push --set-upstream origin <branch_name>> - To push new branch to remote
+
+<git checkout main>
+<git merge <branch_name>> - To merge that branch to main.
+Generally merging is done via PullRequest on github. We can then pull the latest update from remote via
+<git pull> - after checking out to main branch
+Don't merge again in local directory
+
+<git branch --merge> - To see the branches merged to main
+<git branch --no-merge> - To see branches that aren't merged
+
+<git fetch> - Used to get changes from remote to object database but not to local repo. These changes cannot be viewed directly on main/other branch, instead we can view changes using diff command, like shown below
+<git diff main origin/main> 
+<git log main..origin/main>
+We can also checkout to origin/main and view changes on remote - <git checkout origin/main>
+Let's say a commit on remote has changes to main.txt. After <git fetch>, we still can't see those chages in main.txt. We can instead use like
+<git diff origin/main -- main.txt>
+<git merge origin/main> - If we think the changes are fine and can be merged to main 
+
+<git pull> - Copies all files from remote to local repo
 
